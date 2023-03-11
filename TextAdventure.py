@@ -22,6 +22,8 @@ for i in range(7):
     if i == 3:
         map[y-1][x-1] = 'S'
 
+print(map)
+
 print('Willkommen!\n')
 
 print('Erklärung:\n'
@@ -44,14 +46,19 @@ while running:
         m = map[y - 1][x - 1]
 
         if m == 'W':
-            print(colored('Du bist nach Norden gegangen.\nDu hast nichts interresantes entdeckt.', 'lightblue'))
-        print(m)
+            print('Du bist nach Norden gegangen.\nDu hast nichts interresantes entdeckt.')
+
+        map[y-1][x-1] = 'S'
+        map[y][x-1] = 'W'
     elif a == 'w':
         pass
     elif a == 'o':
         pass
     elif a == 's':
         pass
+    elif a == 'stop':
+        print('\nDanke fürs Spielen!\n')
+        exit()
     else:
         print('Ich weiß nicht was du meinst.')
 
